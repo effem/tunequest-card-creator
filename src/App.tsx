@@ -60,7 +60,25 @@ function App() {
         <div className="w-full h-screen overflow-scroll">
 
             <div className="mx-auto mt-16 w-full mt-8 px-8">
+
+                <div
+                    className="pointer-events-auto flex items-center justify-between gap-x-6 bg-blue-50 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5 mb-4 sm:mb-8">
+                    <div className="text-sm leading-6 text-blue-700 flex space-x-2">
+                        <div className="text-blue-400">
+                            <strong className="font-semibold">Important</strong>
+                            <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
+                                <circle cx={1} cy={1} r={1}/>
+                            </svg>
+                            <span>
+                                This tool uses the Spotify API to read the release year of the tracks by looking at the tracks album release year.
+When creating your playlist you need to pay attention to select the original tracks and not the remastered versions or version of the tracks that are part of some compilations since this results in wrong release year information.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-5">
+
                     <div className="col-span-1 sm:col-span-4">
                         <label htmlFor="playlist" className="block text-sm font-semibold leading-6 text-gray-900">
                             Playlist URL
