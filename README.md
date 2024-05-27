@@ -17,11 +17,6 @@ Here's how it works:
 This tool uses the Spotify API to read the release year of the tracks by looking at the tracks album release year. 
 When creating your playlist you need to pay attention to select the original tracks and not the remastered versions or version of the tracks that are part of some compilations since this results in wrong release year information.
 
-## Hosted Version
-A hosted version of this tool can be found at [https://tunequestcreate.rofln.de/](https://tunequestcreate.rofln.de/).
-Currently the API Client is in development mode and I have not stress tested the limitations of the Spotify API in development mode. 
-If you encounter any issues, please let me know by opening an issue or a pull request.
-
 ## Printing the Cards
 When printing the cards, make sure to print them duplex and flip on the long edge.
 The alignment of the front and backside of the cards depends on the printer and the printer settings.
