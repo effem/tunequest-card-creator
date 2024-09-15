@@ -29,6 +29,7 @@ function App() {
     const [url, setUrl] = useState<string>('');
     const [playlistItems, setPlaylistItems] = useState<PlaylistedTrack<Track>[] | null>(null);
     const [name, setName] = useState<string>('');
+    const [codeType, setCodeType] = useState('qr');
     const inputRef = useRef<HTMLInputElement>(null);
     const sdk = SpotifyApi.withUserAuthorization(clientId, redirectUri, Scopes.playlistRead);
 
@@ -314,19 +315,38 @@ When creating your playlist you need to pay attention to select the original tra
                                                           flexDirection: "row-reverse",
                                                       }}>
                                                     {rowChunk.map(item => (
-                                                        <View key={item.track.id}
-                                                              style={{
-                                                                  //border: '1px solid #000',
-                                                                  width: '6.2cm',
-                                                                  height: '6.2cm',
-                                                                  textAlign: 'center',
-                                                                  display: 'flex',
-                                                                  justifyContent: 'center',
-                                                                  padding: '10px'
-                                                              }}>
-                                                            <Image src={generateSessionPDFQrCode(`spotify:track:${item.track.id}`)}
-                                                                   style={{width: '4cm', margin: '0 auto'}}/>
-                                                        </View>
+                                                        <>
+                                                            {codeType === 'qr' ? (
+                                                                <View key={item.track.id}
+                                                                      style={{
+                                                                          //border: '1px solid #000',
+                                                                          width: '6.2cm',
+                                                                          height: '6.2cm',
+                                                                          textAlign: 'center',
+                                                                          display: 'flex',
+                                                                          justifyContent: 'center',
+                                                                          padding: '10px'
+                                                                      }}>
+                                                                    <Image src={generateSessionPDFQrCode(`spotify:track:${item.track.id}`)}
+                                                                           style={{width: '4cm', margin: '0 auto'}}/>
+                                                                </View>
+                                                            ) : (
+                                                                <View key={item.track.id}
+                                                                      style={{
+                                                                          //border: '1px solid #000',
+                                                                          width: '6.2cm',
+                                                                          height: '6.2cm',
+                                                                          textAlign: 'center',
+                                                                          display: 'flex',
+                                                                          justifyContent: 'center',
+                                                                          padding: '10px'
+                                                                      }}>
+                                                                    <Image src={`https://scannables.scdn.co/uri/plain/jpeg/FFFFFF/black/320/spotify:track:` + item.track.id}
+                                                                           style={{width: '4cm', margin: '0 auto'}}/>
+                                                                </View>
+                                                            )}
+                                                        </>
+
                                                     ))}
                                                 </View>
                                                 <View style={{
