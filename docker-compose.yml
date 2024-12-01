@@ -2,7 +2,7 @@ services:
   tunequest-create:
     image: nginx
     volumes:
-      - .:/usr/share/nginx/html
+      - ./dist:/usr/share/nginx/html
     container_name: tunequest-create
     ports:
       - 80:80
