@@ -5,6 +5,6 @@ services:
       - ./dist:/usr/share/nginx/html
     container_name: tunequest-create
     ports:
-      - 80:80
+      - 5173:80
     tty: true
     stdin_open: true
