@@ -129,6 +129,25 @@ When creating your playlist you need to pay attention to select the original tra
                         </button>
                     </div>
                 </div>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-8 mt-4">
+
+                  <div className="col-span-1 sm:col-span-1">
+                      <label htmlFor="codeType" className="block text-sm font-semibold leading-6 text-gray-900">
+                          Select Code Type
+                      </label>
+                      <div className="mt-2.5">
+                          <select
+                              id="codeType"
+                              name="codeType"
+                              className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                              onChange={e => setCodeType(e.target.value)}
+                          >
+                              <option value="qr" selected>QR Code</option>
+                              <option value="spotify">Spotify Code</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
             </div>
 
             {
